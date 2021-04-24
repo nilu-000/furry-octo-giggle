@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const {getAll, getOne} = require('./model');
 
-router.get('/books', async (req, res) => {
+router.get('/authors', async (req, res) =>{
     try {
         console.log('GET: ' + Date.now());
         const result = await getAll();
@@ -22,7 +22,8 @@ router.get('/books', async (req, res) => {
     }
 });
 
-router.get('/books/:id', async (req, res) => {
+
+router.get('/authors/:id', async (req, res) => {
     try {
         console.log('GET: ' + Date.now());
         const result = await getOne(req.params.id);
@@ -41,11 +42,5 @@ router.get('/books/:id', async (req, res) => {
         });
     }
 });
-
-
-router.get('/', (req, res) => {
-    res.send('here you come');
-    console.log('GET: ' + Date.now());
-})
 
 module.exports = router;

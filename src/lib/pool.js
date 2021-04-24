@@ -5,7 +5,7 @@ require('dotenv/config');
 const pool = new Pool({
     host: "localhost",
     user: process.env.DB_USER,
-    database: "book_author",
+    database: "bookstore",
     password: process.env.DB_PWD,
     port: 5432
 });
